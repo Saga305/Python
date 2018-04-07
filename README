@@ -1,0 +1,47 @@
+****************Python*******************
+
+=> Definition:
+	Python is high level, interpreted, interactive, object oriented programming language with automatic memory management and garbage collector.
+	Python is dynamically typed and loosely coupled language.
+
+=> Interpreter:
+	The interpreter reads program line by line and execute it. Python interpreter is written in C language.
+	Python source code runs directly from its source code.
+
+=> Interactive:
+	Python can communicate with another language as well as with a user.
+		C++/C + Python = CPython or Cython
+		Java + Python = Jython
+
+=> Statically coupled language:
+	A language in which you must have to specify the data type of variable for memory allocation is called Statically coupled Language.
+	Python is dynamically coupled language.
+
+=> Automatic memory management:
+	If the values of python variables are same then it allocates a single memory block.
+
+=> Garbage collector:
+	It releases unused memory block. It is like a destructor for python.
+
+=> Python data type / data structure:
+	Python has two types of data types:
+	1. Mutable
+	2. Immutable
+
+	=> Mutable data types:
+		Mutable data types can change their values, but keep their ID (memory location).
+
+	List of mutable data types:
+	1. List
+	2. Dictionary
+	3. Sets
+
+=> Immutable data types:
+	An object with fixed value is called immutable data type.
+	Such an object cannot be altered. A new object has to be created if a different value has to be stored.
+
+	List of Immutable data Types:
+	1. Number's
+	2. String
+	3. Tuple
+	4. Frozen-sets

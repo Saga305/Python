@@ -45,3 +45,157 @@
 	2. String
 	3. Tuple
 	4. Frozen-sets
+
+=> Sequence:
+	Collection of data is called sequence.
+
+=> Iterable Sequence:
+	An object capable of returning all its member one at a time.
+
+=> Hashable Sequence:
+	We can able to access values of sequence from its index.
+
+=> Numbers Data type:
+	-> Immutable,unhashable.
+	-> It contains int,float,double,complex etc.
+
+=> Strings data type:
+--------------------
+	-> Immutable,Iterable,hashable.
+	-> It contains a bunch of characters.
+
+	syntex:
+   	s = 'Python' or s = "Python"
+
+=> String Indexing:
+-------------------
+	
+	-------------------------------------------------------------------------
+	|	forward(+ve)	|0	|1	|2	|3	|4	|5	|
+	-------------------------------------------------------------------------
+	|	String 		|P	|y	|t	|h	|o	|n	|
+	-------------------------------------------------------------------------
+	|	Backward(-Ve) 	|-6	|-5	|-4	|-3	|-2	|-1	|
+	-------------------------------------------------------------------------
+
+	Here in abvoe diagram Forward and backward indexing is shown for the string Python.
+
+=> String Hashing:
+------------------
+	Syntex: variable_Name[index_Number]
+
+	Example:
+	-------
+		>>> s='Python'
+		>>> s[0]
+		'P'
+		>>> s[-6]
+		'P'
+		>>> s[1]
+		'y'
+		>>> s[-5]
+		'y'
+		>>> s[2]
+		't'
+		>>> s[-4]
+		't'
+		>>> s[0] == s[-6]
+		True
+		>>> s[1] == s[-5]
+		True
+
+=> String Slicing:
+------------------
+	Syntex:
+	-------
+		variable_Name[start_Index : End index]
+			End Index values is considered as (length - 1)
+
+	+Ve Indexing example:
+	--------------------
+		>>> s[0:5]
+		'Pytho'
+		>>> s[1:5]
+		'ytho'
+		>>> s[0:6]
+		'Python'
+		>>> s[0:]
+		'Python'
+		>>> s[:6]
+		'Python'
+		>>> s[:]
+		'Python'
+
+			
+	-Ve Indexing example:
+	--------------------
+
+		>>> s[-6:]
+		'Python'
+		>>> s[:-1]
+		'Pytho'
+		>>> s[:-2]
+		'Pyth'
+		>>> s[-6:-2]
+		'Pyth'
+		>>> s[-3:-2]
+		'h'
+		>>> s[-3:-3]
+		''
+		>>> s[-3:-2]
+		'h'
+
+=> String Stepping:
+------------------
+
+	Syntex: Variable_Name[start_index:end_index:step]
+
+	+Ve steppings example:
+	---------------------
+		>>> s[0:6:2]
+		'Pto'
+		>>> s[1:6:2]
+		'yhn'
+		>>> s[2:5:3]
+		't'
+		>>> s[0:5:4]
+		'Po'
+		>>> s[0:6:2]
+		'Pto'
+		>>> s[:6:2]
+		'Pto'
+		>>> s[::2]
+		'Pto'
+		>>> 
+
+	-Ve Steppings:
+	--------------
+	1. varName[high:low:-step]
+		[seq[high],seq[high-step],seq[high-step-step],seq[low+1]]
+
+	2. varName[high::-step]
+		[seq[high],seq[high-step],seq[high-step-step],seq[0]]
+
+	3. varName[:low:-step]
+		[seq[-1],seq[-1-step],seq[-1-step-step],seq[low+1]]
+
+	4. varName[::-step]
+		[seq[-1],seq[-1-step],seq[-1-step-step],seq[0]]
+
+	Examples:
+	---------
+
+		>>> s[5:0:-1]
+		'nohty'
+		>>> s[5:0:-2]
+		'nhy'
+		>>> s[5:0:-3]
+		'nt'
+		>>> s[6:0:-1]
+		'nohty'
+		>>> s[:0:-1]
+		'nohty'
+		>>> s[::-1]
+		'nohtyP'
+		>>> 
+

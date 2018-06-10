@@ -16,9 +16,9 @@ print (mov['duration'].head())
 booleans = []
 for i in mov.duration:
 	if i >= 200:
-		booleans.append("True")
+		booleans.append(True)
 	else:
-		booleans.append("False")
+		booleans.append(False)
 
 #Printing first 5 elemnets of booleans list.
 print (booleans[:5])
@@ -33,7 +33,7 @@ is_long = pd.Series(booleans)
 print (is_long.head())
 
 #printing whole row using panadas series.
-#print (mov[is_long].head())
+print (mov[is_long].head())
 		 
 is_long = mov.duration >=200
 print (mov[is_long].head())

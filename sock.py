@@ -12,7 +12,7 @@ class Socket(socket.socket):
     def bind():
         self.socket.bind((self.ip, self.port))        # Bind to the port
 
-    def listen(clients):
+    def listen(client):
         self.socket.listen(client)                 # Now wait for client connection.
 
     def accept():

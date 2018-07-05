@@ -6,7 +6,7 @@ def Main():
 	msg = input("Girl:")
 	while True:
 		s.send(msg)
-		print("Boy:",s.receive())
+		print("Boy:",s.rece())
 		msg = input("Girl:")
 	s.close()
 		

@@ -8,7 +8,7 @@ def Main():
 	while True:
 		print("Girl:",s.receive())
 		msg = input("Boy:")
-		s.send(msg)
+		s.sends(msg)
 	s.close()
 
 

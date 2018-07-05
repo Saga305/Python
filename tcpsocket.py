@@ -22,6 +22,9 @@ class Socket(socket.socket):
 	def send(self, msg):
 		self.sk.send(msg.encode())
 
+	def sends(self, msg):
+		self.c.send(msg.encode())
+
 	def close(self):
 		self.c.close()                # Close the connection
 
@@ -29,4 +32,7 @@ class Socket(socket.socket):
 		self.sk.connect((self.ip, self.port))
 
 	def receive(self):
+		return self.c.recv(1024).decode()
+
+	def rece(self):
 		return self.sk.recv(1024).decode()

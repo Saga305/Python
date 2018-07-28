@@ -24,6 +24,7 @@ def update_time(timeZone):
 	
  
 if __name__ == "__main__":
+	print("Thread {} is executing.".format(th.current_thread().getName()))
 	# creating thread AEST
 	aest = th.Thread(target=update_time,name="AEST", args=(ts.ausZone,))
 

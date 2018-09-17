@@ -53,10 +53,8 @@ class BST:
 	def insert(self,key):
 		self.__insert(self.root,key)
 
-
 	def inorderPrint(self):
 		self.__inorderPrint(self.root)
-
 
 	def findSmallestKey(self):
 		return self.__findSmallestKey(self.root)

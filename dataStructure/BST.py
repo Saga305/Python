@@ -63,7 +63,7 @@ class BST:
 	def __inOrderPrint(self,node):
 		""" Print inorder traversal [Private method] """
 		if self.__isRootNone():
-			print("BST is Empty")
+			print("BST is Empty ")
 		else:
 			if node.isLeft():
 				self.__inOrderPrint(node.left)
@@ -105,19 +105,42 @@ class BST:
 				self.__postOrderPrint(node.left)
 
 
-	def __findSmallestKey(self,node):
+	def __findSmallestKeyNode(self,node):
 		""" Find smallest key in given node [Private method] """
 		if self.__isRootNone():
 			return -1000
 		else:
 			if node.isLeftNone():
-				return node.key
+				return node
 			if node.isLeft():
-				return self.__findSmallestKey(node.left)
+				return self.__findSmallestKeyNode(node.left)
 
 	def __removeKey(self,node,key):
 		""" Remove given key [Private method] """
-		pass
+		if self.__isRootNone():
+			return self.root
+		else:
+			if node == None:
+				return None
+			if key < node.key:
+				node.left = self.__removeKey(node.left,key)
+			elif key > node.key:
+				node.right = self.__removeKey(node.right,key)
+			else:
+
+				if node.isLeftNone():
+					temp = node.right
+					node = None
+					return temp
+				elif node.isRightNone():
+					temp = node.left
+					node = None
+					return temp
+
+				temp = self.__findSmallestKeyNode(node.right)
+				node.key = temp.key
+				node.right = self.__removeKey(node.right,node.key)
+			return node
 
 	def insert(self,key):
 		""" Insert a node """
@@ -145,11 +168,11 @@ class BST:
 
 	def findSmallestKey(self):
 		""" Find smallest key in given node """
-		return self.__findSmallestKey(self.root)
+		return self.__findSmallestKeyNode(self.root).key
 
 	def removeKey(self,key):
 		""" Remove given key  """
-		self.__removeKey(self.root,key)
+		self.root = self.__removeKey(self.root,key)
 
 	def getRootKey(self):
 		""" Get root key """
@@ -158,14 +181,14 @@ class BST:
 
 if __name__=="__main__":
 	tree = BST()
-	l = [10,5,6,3,4,20,7,8,9,0,11,12,13,14,15]
+	l = [10,5,6,3,4,20,7,8,9,1,11,12,13,14,15]
 	for i in l:
 		tree.insert(i)
 	tree.inOrderPrint()
-	tree.preOrderPrint()
-	tree.postOrderPrint()
-	tree.reverseOrderPrint()
-	print("Smallest node = ",tree.findSmallestKey())
-	print("Root key = ",tree.getRootKey())
-	tree.removeKey(tree.getRootKey())
-	tree.inOrderPrint()
+	key = int(input("Enter a key you want to delete(Enter -1 to Exit):"))
+	while key:
+		if key == -1:
+			break
+		tree.removeKey(key)
+		tree.inOrderPrint()
+		key = int(input("Enter a key you want to delete(Enter -1 to Exit):"))

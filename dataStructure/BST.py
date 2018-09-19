@@ -158,6 +158,19 @@ class BST:
 		hightOfRightSubTree = self.__getHeight(node.right)
 		return hightOfLeftSubTree - hightOfRightSubTree
 
+	def __display(self,node,level):
+		"""Print tree """
+		if node != None:
+			self.__display(node.right,level + 1)
+			print("")
+			if node == self.root:
+				print("Root ->",end="")
+			if node != self.root:
+				for i in range(level+1):
+					print("    ",end= "")
+			print(node.key, end="")
+			self.__display(node.left,level+1)
+
 	def insert(self,key):
 		""" Insert a node """
 		self.__insert(self.root,key)
@@ -202,15 +215,21 @@ class BST:
 		"""Get Balance Factor of root node """
 		return self.__getBalanceFactor(self.root)
 
+	def display(self):
+		"""Print tree """
+		self.__display(self.root,1)
+		print("")
+
 
 if __name__=="__main__":
 	tree = BST()
-	l = [10,5,6,3,4,20,7,8,9,1,11,12,13,14,15]
+	l = [10,5,4,15,12]
 	for i in l:
 		tree.insert(i)
 	tree.inOrderPrint()
 	print("Height of the tree : ",tree.getHeight())
-	print("Height of the tree : ",tree.getBalanceFactor())
+	print("Balance Factor of the tree : ",tree.getBalanceFactor())
+	tree.display()
 	key = int(input("Enter a key you want to delete(Enter -1 to Exit):"))
 	while key != -1:
 		tree.removeKey(key)

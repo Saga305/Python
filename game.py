@@ -183,5 +183,5 @@ class TictocToe:
 if __name__ == '__main__':
     while True:
         t = TictocToe()
-        if input('Do you want to play again? (yes or no)').lower().startswith('y') != 'y':
+        if not input('Do you want to play again? (ys or no)').lower().startswith('y'):
             break

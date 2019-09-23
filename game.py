@@ -76,7 +76,7 @@ class TictocToe:
         :param move:
         :return: Boolean
         """
-        return (move in self.board)
+        return (move in board)
 
     def getMovementFromPlayer(self):
         """
